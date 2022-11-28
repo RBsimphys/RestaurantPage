@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 module.exports = {
     mode: 'development',
@@ -9,7 +10,7 @@ module.exports = {
         static: {
             directory: path.resolve(__dirname, 'dist')
         },
-        port: 3000,
+        port: 9000,
         open: true,
         hot: true,
         compress: true,
@@ -40,6 +41,8 @@ module.exports = {
             filename: 'index.html',
             template: 'src/template.html',
         }),
+        new FaviconsWebpackPlugin("./src/assets/papaLogo.png"),
+
     ]
 
 };

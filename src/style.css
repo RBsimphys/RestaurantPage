@@ -1,62 +1,261 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap');
 
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: 'Merriweather', serif;
 }
 
 
 #content {
-    width: 100vw;
-    height: 100vh;
-    background-color: #a6bfd5;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
-
 
 /* navigation bar */
 
-.mainNavContainer {
+.NavContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    border-bottom: solid black 1px;
+}
+
+.papaLogo {
+    flex-basis: 10%;
+    flex-grow: 0;
+    flex-shrink: 1;
+    margin-left: 50px;
+    max-width: 135px;
+    max-height: 100px;
+}
+
+.rightNav {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    gap: 30px;
+    padding-right: 10px;
+    font-size: 1.1em;
+}
+
+#mySelect {
+    padding: 4px;
+    border: none;
+    background-color: white;
+    font-size: 1.1em;
+}
+
+
+.signUp {
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 40px;
+    padding: 10px;
+}
+
+.signUp:hover {
+    background-color: rgb(62, 62, 62);
+}
+
+.bottomNavContainer {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    border-bottom: solid black 1px;
+    font-size: 1.5em;
+    gap: 20px;
+}
+
+.promo {
+    border: solid gray 1px;
+    margin-left: auto;
+    padding: 10px;
+    font-size: 0.6em;
+}
+
+.cart {
+    width: 40px;
+    height: auto;
+}
+
+.mainNav {
+    display: flex;
+    gap: 20px;
+}
+
+.mainNav>*:hover {
+    border-bottom: solid green 3px;
+}
+
+
+/************************HOME PAGE*******************************/
+
+/* rewards */
+.rewards {
+    position: relative;
+    width: 100%;
+}
+
+.homePizza {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.mainReward {
+    position: absolute;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    row-gap: 10px;
+    top: 100px;
+    left: 50%;
+    font-size: 3em;
+    color: white;
+    width: 50%;
 }
 
-
-.logo {
-    font-size: 100px;
-    color: #131112;
-    font-family: 'Roboto Mono', monospace;
+.reward {
+    font-size: 1em;
 }
 
+.rewardDescription {
+    font-size: 0.6em;
+}
 
-.navOptions {
-    color:#60656F; 
-    font-family: 'Roboto Mono', monospace;
-    font-size: 50px;
+/* featured content  */
+
+.featuredContainer {
     display: flex;
+    gap: 30px;
+    padding-top: 20px;
+    min-height: 400px;
+    width: 70%;
+    overflow-x: auto;
+    overflow-y: auto;
+    border-bottom: solid 1px gainsboro;
+}
+
+.featuredContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.featuredContent {
+    flex-basis: 10%;
+    object-fit: cover;
+    height: 300px;
+    margin: 20px;
+    border-radius: 20px;
+}
+
+.featuredContent:hover {
+    filter: brightness(80%);
+}
+
+/* menu options */
+
+.exploreContainer {
+
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-
+    width: 70%;
 }
 
-.circle{
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #FCAA67;
-    transition:ease-in 200ms; 
+.optionContainer {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
 }
-.navCat {
-    width: 400px;
+
+.optionImage {
+    object-fit: cover;
+    width: 200px;
+    border-radius: 20%;
     height: auto;
-    border-radius: 400px;
+    transition: 0.5s;
+}
 
+.optionImage:hover {
+    transform: scale(1.05);
+}
+
+/* order container */
+
+.orderContainer {
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.orderImage {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    filter: brightness(70%);
+}
+
+.orderFromDiv {
+    position: absolute;
+    top: 70px;
+    left: 650px;
+    font-size: 2em;
+    color: whitesmoke;
+}
+
+.iosBadge {
+    position: absolute;
+    left: 620px;
+    top: 100px;
+    width: 300px;
+    height: auto;
+}
+
+.googleApp {
+    position: absolute;
+    left: 633px;
+    top: 200px;
+    width: 275px;
+    height: auto;
+
+}
+
+/* *****************FOOTER********************* */
+
+
+.footer{
+    border-top: solid rgb(181, 181, 181) 1px ;
+    padding: 50px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.footerList {
+    flex-basis: 40%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap:5px;
+    font-size: 1em;
+    color: grey;
+}
+
+.building{
+    flex-basis: 60%;
+    height: 200px;
+    object-fit: cover;
 }
